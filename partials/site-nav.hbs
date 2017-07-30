@@ -1,0 +1,23 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {{^is "home"}}
+            {{#if @blog.logo}}
+                <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="{{@blog.url}}">Coen Goedegebure's Blog</a>
+            {{/if}}
+        {{/is}}
+        {{#if @blog.navigation}}
+            {{navigation}}
+        {{/if}}
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+			<a class="social-link fa fa-twitter" href="https://twitter.com/coenhimself" target="_blank">&nbsp;</a>
+			<a class="social-link fa fa-linkedin" href="https://www.linkedin.com/in/coengoedegebure/" target="_blank">&nbsp;</a>				
+			<a class="social-link fa fa-google-plus" href="https://google.coengoedegebure.com" target="_blank">&nbsp;</a>
+			<a class="social-link fa fa-rss" href="https://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">&nbsp;</a>
+        </div>
+    </div>
+	
+</nav>
