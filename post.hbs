@@ -23,6 +23,8 @@ into the {body} of the default.hbs template --}}
                     {{#if tags}}
                         <span class="date-divider"></span>{{#foreach tags}}{{#if @first}}&nbsp;{{else}}&nbsp;/&nbsp;{{/if}}<a href="{{url}}">{{name}}</a> {{/foreach}}
                     {{/if}}
+					<div class="readingTimeText">Reading Time:</div>
+					<div class="reading-time"></div>
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
@@ -166,6 +168,13 @@ $(document).ready(function () {
     var lastDocumentHeight = $(document).height();
     var ticking = false;
 
+	var txt = $postContent[0].textContent,
+    wordCount = txt.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
+
+    var readingTimeInMinutes = Math.floor(wordCount / 250) + 1;
+    var readingTimeAsString = readingTimeInMinutes + " min";
+    $('article .reading-time').html(readingTimeAsString);
+	
     function onScroll() {
         lastScrollY = window.scrollY;
         requestTick();

@@ -1017,6 +1017,12 @@ body
     text-transform: uppercase;
 }
 
+.readingTimeText
+{
+	padding-left: 28px;
+	padding-right: 10px
+}
+
 .post-full-meta-date
 {
     color: #3eb0ef;
@@ -1340,6 +1346,15 @@ body
 {
     font-size: 1.2rem;
     line-height: 1.3em;
+}
+
+.readingTimeText
+{
+	overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+	padding-left:20px;
+	padding-right:0px;
 }
 
 .post-full-title
