@@ -52,6 +52,13 @@ a:active,a:hover
     outline: 0;
 }
 
+a.anchor {  
+    display: block;
+    position: relative;
+    top: -35px;
+    visibility: hidden;
+}
+
 b,strong
 {
     font-weight: 700;
