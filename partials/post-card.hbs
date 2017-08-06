@@ -7,6 +7,9 @@
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
+				{{#if featured}}
+					<span class="post-card-featured">Featured</span>
+				{{/if}}
 				{{#if tags}}
 					<span class="post-card-tags">{{#foreach tags}}{{#if @first}}{{else}}&nbsp;/&nbsp;{{/if}}{{name}}{{/foreach}}</span>
                 {{/if}}
