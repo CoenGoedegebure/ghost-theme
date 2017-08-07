@@ -1220,12 +1220,9 @@ body
 .post-full-content blockquote
 {
     margin: 0 0 1.5em;
-    padding: 1.5em 0;
-    border: 0;
-    color: #3eb0ef;
-    font-size: 3rem;
-    line-height: 1.6em;
-    text-align: center;
+    padding: .5em 1em;
+    color: #247180;
+    border-left: thick solid #ed830e;
 }
 
 .post-full-content blockquote:before
