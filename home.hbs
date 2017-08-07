@@ -23,6 +23,11 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
         <div class="post-feed">
+			{{#get "posts" include="tags,author" filter="featured:true" limit="all" as |featuredposts|}}
+				{{#foreach featuredposts}}
+					{{> "post-card"}}
+				{{/foreach}}
+			{{/get}}
             {{#foreach posts}}
                 {{^if featured}}
 					{{> "post-card"}}
