@@ -283,12 +283,12 @@ textarea
 
 blockquote,dl,ol,p,ul
 {
-    margin: 0 0 1.5em;
+    margin: 0 0 1.3em .7em;
 }
 
 ol,ul
 {
-    padding-left: 1em;
+    padding-left: 2em;
     padding-right: 1.5em;
 }
 
