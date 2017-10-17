@@ -46,7 +46,12 @@ $(function ($) {
             return;
         }
 
-        isLoading = true;
+        // return if currentPage is the last page already
+        if (currentPage === maxPages) {
+            return;
+        }
+
+		isLoading = true;
 
         // next page
         currentPage++;
