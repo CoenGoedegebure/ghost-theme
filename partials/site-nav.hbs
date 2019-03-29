@@ -13,11 +13,14 @@
     </div>
     <div class="site-nav-right">
         <div class="social-links">
-			<a class="social-link fa fa-twitter" href="https://twitter.com/coenhimself" target="_blank">&nbsp;</a>
-			<a class="social-link fa fa-linkedin" href="https://www.linkedin.com/in/coengoedegebure/" target="_blank">&nbsp;</a>				
-			<a class="social-link fa fa-google-plus" href="https://google.coengoedegebure.com" target="_blank">&nbsp;</a>
-			<a class="social-link fa fa-rss" href="https://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank">&nbsp;</a>
+			<a class="social-link fa fa-twitter" href="https://twitter.com/coenhimself" target="_blank" rel="noopener">&nbsp;</a>
+			<a class="social-link fa fa-linkedin" href="https://www.linkedin.com/in/coengoedegebure/" target="_blank" rel="noopener">&nbsp;</a>
+			<a class="social-link fa fa-google-plus" href="https://google.coengoedegebure.com" target="_blank" rel="noopener">&nbsp;</a>
+        {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        {{else}}
+            <a class="social-link fa fa-rss" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">&nbsp;</a>
+        {{/if}}
         </div>
     </div>
-	
 </nav>

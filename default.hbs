@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
 
     {{!-- Document Settings --}}
@@ -12,14 +12,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles'n'Scripts --}}
-	<script src="https://use.fontawesome.com/a12e1ae221.js"></script>
+	  <script src="https://use.fontawesome.com/a12e1ae221.js"></script>
     <link rel="icon" href="{{asset 'images/favicon.ico'}}" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <!--[if IE]>
+    	<link rel="stylesheet" type="text/css" href="{{asset "css/screenie.css"}}" />
+    <![endif]-->
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
-    {{!-- This tag outputes SEO meta+structured data and other important settings --}}
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
 </head>
@@ -36,9 +39,9 @@
                 <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
                     <a href="{{@blog.url}}">Home</a>
-					<a href="https://twitter.com/coenhimself" target="_blank">Twitter</a>
-					<a href="https://www.linkedin.com/in/coengoedegebure/" target="_blank">LinkedIn</a>				
-					<a href="https://google.coengoedegebure.com" target="_blank">Google+</a>
+                    <a href="https://twitter.com/coenhimself" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://www.linkedin.com/in/coengoedegebure/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://google.coengoedegebure.com" target="_blank" rel="noopener">Google+</a>
                 </nav>
             </div>
         </footer>
@@ -70,6 +73,9 @@
 
     {{#if pagination.pages}}
     <script>
+        // maxPages is a global variable that is needed to determine
+        // if we need to load more pages for the infinitescroll, or if
+        // we reached the last page already.
         var maxPages = parseInt('{{pagination.pages}}');
     </script>
     <script src="{{asset "js/infinitescroll.js"}}"></script>

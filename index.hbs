@@ -22,6 +22,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
+
         <div class="post-feed">
             {{#foreach posts}}
                 {{^if featured}}
@@ -29,5 +30,6 @@ into the {body} of the default.hbs template --}}
 				{{/if}}
             {{/foreach}}			
         </div>
+
     </div>
 </main>
